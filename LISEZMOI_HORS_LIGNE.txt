@@ -1,0 +1,33 @@
+TRAORÉ TRANSFERT INTERNATIONAL — V46
+THÈME ÉMERAUDE & IVOIRE — CODE SOURCE NETTOYÉ
+
+CONTENU DU DOSSIER
+- index.html : application complète, mise en forme et commentée.
+- sw.js : service worker du mode hors ligne, présenté proprement.
+- manifest.webmanifest : configuration PWA au format JSON lisible.
+- icônes et images : ressources visuelles d’origine conservées.
+
+NETTOYAGE EFFECTUÉ
+- Mise en forme des feuilles CSS et des scripts JavaScript intégrés.
+- Indentation et retours à la ligne cohérents pour faciliter la lecture.
+- Configuration PWA mise en forme sans changer ses valeurs.
+- Service worker conservé et rendu plus lisible.
+- Ressources graphiques et structure fonctionnelle conservées.
+
+CONSERVATION
+Les clés de stockage, les données locales, les rôles, les comptes, les opérations,
+les fonctions de gestion et les mécanismes hors ligne sont conservés.
+Aucune donnée utilisateur n’est intégrée ou réinitialisée par cette opération.
+
+UTILISATION
+Décompresser l’archive puis ouvrir index.html dans Chrome.
+Pour une installation PWA, utiliser un hébergement HTTPS ou localhost.
+Conserver l’ancienne archive comme sauvegarde avant remplacement.
+
+
+V55 — SÉCURITÉ
+- Les nouveaux codes d’accès sont protégés avec PBKDF2-SHA-256 (150 000 itérations).
+- Les anciens codes hachés au format historique sont migrés après une connexion réussie, si le navigateur prend en charge Web Crypto.
+- Pour créer ou modifier un code, utilisez l’application depuis une origine sécurisée HTTPS ou localhost.
+- Les données restent locales : aucune synchronisation Firebase n’est configurée dans cette version.
+- Le service worker ne supprime désormais que les caches appartenant à TRAORÉ TRANSFERT.
