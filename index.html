@@ -4747,6 +4747,407 @@ html body #cg form.tti-reference-login{
 body{padding-bottom:0!important}
 </style>
 
+
+<style id="tti-v61-login-final-polish">
+/* V61 — lisibilité, confort mobile et états interactifs du formulaire */
+html body #cg{
+  padding:clamp(10px,3vw,24px)!important;
+  background-color:#061a37!important;
+}
+html body #cg form.tti-reference-login{
+  width:min(490px,calc(100vw - 24px))!important;
+  max-width:490px!important;
+  border:1px solid rgba(244,205,104,.9)!important;
+  border-radius:26px!important;
+  box-shadow:0 26px 75px rgba(0,12,35,.55),0 0 0 5px rgba(255,255,255,.08)!important;
+}
+#cg .tti-reference-head{
+  padding:22px 22px 24px!important;
+  border-bottom-width:5px!important;
+  border-radius:0 0 34px 34px!important;
+}
+#cg .tti-reference-mark{
+  width:74px!important;height:74px!important;
+  margin-bottom:10px!important;
+}
+#cg .tti-reference-fields{padding:22px 28px 8px!important;gap:13px!important}
+#cg .tti-reference-field{
+  min-height:58px!important;
+  border:1px solid #cbd6e5!important;
+  border-radius:14px!important;
+  transition:border-color .18s ease,box-shadow .18s ease!important;
+}
+#cg .tti-reference-field:focus-within{
+  border-color:#1768c8!important;
+  box-shadow:0 0 0 3px rgba(23,104,200,.14)!important;
+}
+#cg .tti-reference-field input:focus{outline:none!important}
+#cg .tti-reference-submit{
+  min-height:56px!important;
+  border-radius:14px!important;
+  background:linear-gradient(105deg,#e0a51b,#f5ca55 52%,#d99b10)!important;
+  cursor:pointer!important;
+  transition:filter .18s ease,transform .18s ease,box-shadow .18s ease!important;
+}
+#cg .tti-reference-submit:hover:not(:disabled){
+  filter:brightness(1.04)!important;
+  transform:translateY(-1px)!important;
+  box-shadow:0 9px 20px rgba(115,78,0,.2)!important;
+}
+#cg .tti-reference-submit:disabled{opacity:.72!important;cursor:wait!important}
+#cg .er{
+  color:#b42318!important;
+  font-size:13px!important;
+  font-weight:650!important;
+  line-height:1.4!important;
+  padding:2px 4px!important;
+}
+#cg .tti-shared{
+  align-items:flex-start!important;
+  padding:4px 2px!important;
+  line-height:1.45!important;
+}
+#cg .tti-reference-actions .lk{
+  min-height:32px!important;
+  font-size:12px!important;
+  font-weight:700!important;
+}
+#cg .tti-reference-actions .lk:focus-visible,
+#cg .tti-eye:focus-visible,
+#cg .tti-reference-submit:focus-visible{
+  outline:3px solid rgba(20,103,196,.35)!important;
+  outline-offset:3px!important;
+}
+@media(max-width:480px){
+  html body #cg{padding:10px!important}
+  html body #cg form.tti-reference-login{
+    width:100%!important;
+    border-radius:22px!important;
+  }
+  #cg .tti-reference-head{padding:17px 14px 19px!important}
+  #cg .tti-reference-mark{width:64px!important;height:64px!important}
+  #cg .tti-reference-title{font-size:20px!important}
+  #cg .tti-reference-services{font-size:10px!important}
+  #cg .tti-reference-fields{padding:17px 16px 7px!important;gap:11px!important}
+  #cg .tti-reference-field{min-height:54px!important}
+  #cg .tti-reference-field input{min-height:50px!important;font-size:16px!important}
+  #cg .tti-reference-submit{min-height:53px!important;font-size:17px!important}
+  #cg .tti-reference-actions{gap:8px!important;margin-left:10px!important;margin-right:10px!important}
+}
+@media(max-height:700px){
+  html body #cg{align-items:start!important}
+  html body #cg form.tti-reference-login{margin:auto 0!important}
+  #cg .tti-reference-head{padding-top:12px!important;padding-bottom:14px!important}
+  #cg .tti-reference-mark{width:56px!important;height:56px!important}
+  #cg .tti-reference-fields{padding-top:13px!important;gap:9px!important}
+}
+</style>
+
+
+<style id="tti-v62-premium-login">
+/* Refonte graphique premium du formulaire de connexion — V62 */
+html body #cg{
+ position:fixed!important;inset:0!important;z-index:99999!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ padding:22px!important;overflow-y:auto!important;overflow-x:hidden!important;
+ background:
+  radial-gradient(ellipse at 14% 18%,rgba(28,108,181,.35),transparent 38%),
+  linear-gradient(135deg,rgba(3,15,34,.88),rgba(4,31,63,.82)),
+  url("login-background.webp") center/cover no-repeat fixed!important;
+}
+html body #cg form.tti-reference-login{
+ width:min(470px,calc(100vw - 28px))!important;max-width:470px!important;
+ min-height:0!important;height:auto!important;box-sizing:border-box!important;
+ padding:0 0 17px!important;overflow:hidden!important;
+ border:1px solid rgba(255,255,255,.72)!important;border-radius:28px!important;
+ background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%)!important;
+ color:#142b49!important;
+ box-shadow:0 34px 90px rgba(0,8,24,.48),0 0 0 7px rgba(255,255,255,.08)!important;
+}
+#cg .tti-reference-head{
+ position:relative!important;isolation:isolate!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;text-align:center!important;
+ box-sizing:border-box!important;width:100%!important;
+ padding:25px 24px 27px!important;overflow:hidden!important;
+ color:#fff!important;
+ background:
+  linear-gradient(135deg,rgba(4,24,54,.94),rgba(8,66,126,.87)),
+  url("login-reference-bg.webp") center/cover no-repeat!important;
+ border:0!important;border-bottom:4px solid #e7b94b!important;
+ border-radius:0!important;
+}
+#cg .tti-reference-head:before{
+ content:"";position:absolute;z-index:-1;width:240px;height:240px;
+ right:-100px;top:-140px;border:1px solid rgba(255,255,255,.16);
+ border-radius:50%;box-shadow:0 0 0 24px rgba(255,255,255,.035),0 0 0 50px rgba(255,255,255,.025);
+}
+#cg .tti-reference-head:after{
+ content:"";position:absolute;z-index:-1;width:170px;height:170px;
+ left:-100px;bottom:-125px;border:1px solid rgba(232,190,83,.25);border-radius:50%;
+ box-shadow:0 0 0 20px rgba(232,190,83,.045);
+}
+#cg .tti-login-kicker{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ gap:10px!important;margin:0 0 13px!important;
+ color:#f3d58a!important;font-size:9px!important;font-weight:800!important;
+ letter-spacing:2.2px!important;
+}
+#cg .tti-login-kicker span{width:20px;height:1px;background:#d8b65d;opacity:.85}
+#cg .tti-reference-mark{
+ width:68px!important;height:68px!important;display:flex!important;
+ align-items:center!important;justify-content:center!important;
+ margin:0 auto 14px!important;border:2px solid #f0cf75!important;
+ border-radius:20px!important;transform:rotate(-4deg)!important;
+ color:#fff!important;font-size:24px!important;font-weight:950!important;
+ letter-spacing:-1.8px!important;
+ background:linear-gradient(145deg,#1d65a8,#09294f)!important;
+ box-shadow:0 9px 24px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.24)!important;
+}
+#cg .tti-reference-mark span{color:#ffd66d!important;font-size:25px!important}
+#cg .tti-reference-title{
+ color:#f6d37d!important;font-size:clamp(19px,4vw,24px)!important;
+ line-height:1.2!important;font-weight:900!important;letter-spacing:1.2px!important;
+ text-shadow:0 2px 8px rgba(0,0,0,.2)!important;
+}
+#cg .tti-reference-title strong{
+ display:block!important;margin-top:4px!important;color:#fff!important;
+ font-size:.92em!important;letter-spacing:3px!important;
+}
+#cg .tti-reference-services{
+ margin-top:10px!important;max-width:320px!important;
+ color:rgba(255,255,255,.78)!important;font-size:10px!important;
+ line-height:1.7!important;letter-spacing:.15px!important;
+}
+#cg .tti-reference-fields{
+ display:flex!important;flex-direction:column!important;gap:12px!important;
+ padding:25px 30px 8px!important;
+}
+#cg .tti-reference-hint{
+ color:#718096!important;font-size:12px!important;text-align:left!important;
+ line-height:1.5!important;margin:0 2px 2px!important;
+}
+#cg .tti-reference-field{
+ display:flex!important;align-items:center!important;gap:12px!important;
+ min-height:58px!important;padding:0 14px!important;box-sizing:border-box!important;
+ border:1px solid #dce4ee!important;border-radius:13px!important;
+ background:#fff!important;color:#183452!important;
+ box-shadow:0 3px 10px rgba(17,48,83,.035)!important;
+ transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease!important;
+}
+#cg .tti-reference-field:focus-within{
+ border-color:#2877c4!important;box-shadow:0 0 0 4px rgba(40,119,196,.12)!important;
+ transform:translateY(-1px)!important;
+}
+#cg .tti-field-icon{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ flex:0 0 28px!important;width:28px!important;height:28px!important;
+ border-radius:9px!important;background:#edf4fb!important;color:#2367a7!important;
+ font-size:13px!important;
+}
+#cg .tti-reference-field input{
+ flex:1!important;min-width:0!important;width:100%!important;
+ min-height:54px!important;padding:0!important;border:0!important;outline:0!important;
+ background:transparent!important;color:#142b49!important;
+ font-size:15px!important;font-weight:600!important;
+}
+#cg .tti-reference-field input::placeholder{color:#98a6b7!important;font-weight:450!important}
+#cg .tti-eye{
+ flex:0 0 34px!important;width:34px!important;height:34px!important;
+ border:0!important;border-radius:9px!important;background:#f0f4f8!important;
+ color:#52708e!important;font-size:15px!important;cursor:pointer!important;
+}
+#cg .tti-reference-submit{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ gap:10px!important;width:100%!important;min-height:56px!important;
+ margin-top:3px!important;border:0!important;border-radius:13px!important;
+ background:linear-gradient(110deg,#c18a17,#edc65e 52%,#d6a333)!important;
+ color:#152c49!important;font-size:16px!important;font-weight:900!important;
+ letter-spacing:.35px!important;cursor:pointer!important;
+ box-shadow:0 8px 18px rgba(173,123,22,.22),inset 0 1px 0 rgba(255,255,255,.55)!important;
+ transition:transform .2s ease,filter .2s ease,box-shadow .2s ease!important;
+}
+#cg .tti-reference-submit:hover:not(:disabled){
+ transform:translateY(-2px)!important;filter:brightness(1.04)!important;
+ box-shadow:0 12px 23px rgba(173,123,22,.28)!important;
+}
+#cg .tti-reference-submit:disabled{opacity:.7!important;cursor:wait!important}
+#cg .tti-shared{
+ display:flex!important;align-items:flex-start!important;gap:9px!important;
+ margin:2px 1px 0!important;color:#65758a!important;
+ font-size:11px!important;line-height:1.5!important;
+}
+#cg .tti-shared input{accent-color:#1e65a5!important;margin-top:2px!important}
+#cg .tti-reference-secure{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ gap:7px!important;margin:12px 20px 0!important;padding:10px!important;
+ border-top:1px solid #e8edf3!important;color:#64778e!important;
+ font-size:11px!important;letter-spacing:.2px!important;
+}
+#cg .tti-reference-secure span{color:#23956b!important;font-size:15px!important}
+#cg .tti-reference-actions{
+ display:flex!important;flex-wrap:wrap!important;justify-content:center!important;
+ gap:8px 18px!important;margin:4px 16px 0!important;
+}
+#cg .tti-reference-actions .lk{
+ padding:5px 3px!important;border:0!important;background:transparent!important;
+ color:#1e64a1!important;font-size:11px!important;font-weight:750!important;
+ cursor:pointer!important;text-decoration:none!important;
+}
+#cg .tti-reference-actions .lk:hover{text-decoration:underline!important;color:#124474!important}
+#cg .er{min-height:0!important;padding:0 3px!important;color:#b42318!important;font-size:12px!important;font-weight:700!important;text-align:center!important}
+#cg button:focus-visible,#cg input:focus-visible{
+ outline:3px solid rgba(42,121,194,.3)!important;outline-offset:3px!important;
+}
+@media(max-width:520px){
+ html body #cg{padding:12px!important;background-attachment:scroll!important;background-position:center!important}
+ html body #cg form.tti-reference-login{width:min(430px,calc(100vw - 24px))!important;border-radius:23px!important}
+ #cg .tti-reference-head{padding:20px 15px 22px!important}
+ #cg .tti-reference-mark{width:60px!important;height:60px!important;border-radius:17px!important}
+ #cg .tti-reference-title{font-size:19px!important}
+ #cg .tti-reference-services{font-size:9px!important}
+ #cg .tti-reference-fields{padding:20px 18px 7px!important;gap:11px!important}
+ #cg .tti-reference-field{min-height:55px!important}
+ #cg .tti-reference-field input{font-size:16px!important;min-height:51px!important}
+ #cg .tti-reference-submit{min-height:54px!important}
+}
+@media(max-height:690px){
+ html body #cg{align-items:flex-start!important}
+ html body #cg form.tti-reference-login{margin:auto 0!important}
+ #cg .tti-reference-head{padding-top:12px!important;padding-bottom:14px!important}
+ #cg .tti-login-kicker{margin-bottom:8px!important}
+ #cg .tti-reference-mark{width:50px!important;height:50px!important;margin-bottom:8px!important}
+ #cg .tti-reference-fields{padding-top:14px!important;gap:8px!important}
+ #cg .tti-reference-field{min-height:50px!important}
+ #cg .tti-reference-field input{min-height:46px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #cg *,#cg *:before,#cg *:after{transition:none!important;animation:none!important}
+}
+</style>
+
+
+<style id="tti-v63-private-admin-registration">
+#cg .tti-admin-private{
+ width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;
+ background:#eef4fb;color:#315575;border:1px solid #d9e5f1;
+ font-size:12px;line-height:1.5;text-align:center;
+}
+#cg #cgp,#cg #cgc{
+ width:100%;box-sizing:border-box;min-height:48px;padding:12px 14px;
+ border:1px solid #cbd5e1;border-radius:11px;background:#fff;
+ color:#142b49;font:inherit;
+}
+#cg #cgp:focus,#cg #cgc:focus{
+ outline:0;border-color:#2877c4;box-shadow:0 0 0 3px rgba(40,119,196,.12);
+}
+</style>
+
+
+<style id="tti-v64-bold-typography">
+/* V64 — typographie renforcée sur les écrans de connexion et d'inscription */
+#cg, #cg form, #cg h2, #cg small, #cg label, #cg p,
+#cg .er, #cg .tti-admin-private, #cg .tti-reference-hint,
+#cg .tti-reference-secure, #cg .tti-reference-actions,
+#cg button, #cg input, #cg select, #cg textarea {
+  font-weight:700!important;
+}
+#cg h2{font-weight:900!important;letter-spacing:.2px!important}
+#cg input::placeholder, #cg textarea::placeholder{
+  font-weight:700!important;opacity:1!important;color:#718096!important;
+}
+#cg select option{font-weight:700!important}
+#cg button{font-weight:850!important}
+#cg small{font-weight:700!important;line-height:1.55!important}
+</style>
+
+
+<style id="tti-v65-admin-registration-review">
+#cg form:not(.tti-reference-login){font-weight:700!important}
+#cg form:not(.tti-reference-login) h2{font-size:clamp(22px,4vw,28px)!important;font-weight:900!important;color:#12345a!important}
+#cg form:not(.tti-reference-login) small{display:block;line-height:1.6!important;font-weight:700!important;color:#52657c!important}
+#cg form:not(.tti-reference-login) input,
+#cg form:not(.tti-reference-login) select{
+ width:100%;box-sizing:border-box;min-height:52px;padding:12px 14px;
+ border:1px solid #cbd5e1;border-radius:12px;background:#fff;color:#142b49;
+ font:700 15px/1.35 Inter,"Segoe UI",Arial,sans-serif;
+}
+#cg form:not(.tti-reference-login) button[type="submit"]{
+ min-height:54px;padding:12px 18px;border:0;border-radius:12px;
+ background:linear-gradient(110deg,#c18a17,#edc65e 52%,#d6a333);
+ color:#142b49;font-weight:900;cursor:pointer;
+}
+#cg form:not(.tti-reference-login) .lk{
+ border:0;background:transparent;color:#1e64a1;font-weight:800;cursor:pointer;
+}
+#cg form:not(.tti-reference-login) input:focus,
+#cg form:not(.tti-reference-login) select:focus{
+ outline:0;border-color:#2877c4;box-shadow:0 0 0 3px rgba(40,119,196,.13)
+}
+</style>
+
+
+<style id="tti-v66-agent-registration-layout">
+#cg form.tti-agent-register{
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ gap:12px!important;width:min(490px,calc(100vw - 28px))!important;
+ max-height:calc(100dvh - 28px)!important;overflow-y:auto!important;
+ padding:22px!important;box-sizing:border-box!important;
+}
+#cg form.tti-agent-register h2{
+ margin:0 0 2px!important;padding:10px 8px!important;
+ color:#fff!important;background:#102c55!important;
+ font-size:clamp(21px,5vw,27px)!important;font-weight:900!important;
+ text-align:center!important;border-radius:8px!important;
+}
+#cg form.tti-agent-register small{
+ color:#415a75!important;background:#f1f6fc!important;
+ border:1px solid #d9e5f1!important;border-radius:12px!important;
+ padding:12px!important;text-align:center!important;
+}
+#cg form.tti-agent-register .tti-register-label{
+ display:block!important;margin:2px 0 -7px!important;
+ color:#17395f!important;font-size:13px!important;font-weight:900!important;
+}
+#cg form.tti-agent-register input,
+#cg form.tti-agent-register select{
+ display:block!important;width:100%!important;min-width:0!important;
+ min-height:54px!important;box-sizing:border-box!important;
+ padding:12px 14px!important;border:1px solid #cbd7e4!important;
+ border-radius:12px!important;background:#fff!important;
+ color:#183451!important;font:700 15px/1.35 Inter,"Segoe UI",Arial,sans-serif!important;
+}
+#cg form.tti-agent-register input::placeholder{color:#718096!important;font-weight:600!important;opacity:1!important}
+#cg form.tti-agent-register input:focus,
+#cg form.tti-agent-register select:focus{
+ outline:0!important;border-color:#2877c4!important;
+ box-shadow:0 0 0 3px rgba(40,119,196,.13)!important;
+}
+#cg form.tti-agent-register .tti-admin-private{
+ width:100%!important;box-sizing:border-box!important;
+ padding:11px 12px!important;border-radius:11px!important;
+ background:#eef4fb!important;color:#345575!important;
+ border:1px solid #d9e5f1!important;font-size:12px!important;
+ line-height:1.5!important;text-align:center!important;font-weight:750!important;
+}
+#cg form.tti-agent-register button[type="submit"]{
+ width:100%!important;min-height:55px!important;margin-top:3px!important;
+ border:0!important;border-radius:12px!important;
+ background:linear-gradient(110deg,#bd8615,#f0c95c 52%,#d29a24)!important;
+ color:#10294a!important;font-size:16px!important;font-weight:900!important;
+}
+#cg form.tti-agent-register .lk{padding:10px!important;color:#1e64a1!important;font-weight:850!important}
+@media(max-width:520px){
+ html body #cg{padding:10px!important;align-items:flex-start!important}
+ #cg form.tti-agent-register{
+  width:100%!important;max-height:calc(100dvh - 20px)!important;
+  padding:16px!important;gap:10px!important;border-radius:20px!important;
+ }
+ #cg form.tti-agent-register h2{font-size:21px!important}
+ #cg form.tti-agent-register input,#cg form.tti-agent-register select{min-height:52px!important;font-size:15px!important}
+}
+</style>
+
 </head>
 <body> <div class="app-shell"><div class="scrim" id="scrim"></div><aside class="sidebar" id="sidebar"><div class="brand"><span class="brand-mark" style="padding:0;overflow:hidden;background:#092c5a"><img src="icon-512.png" alt="Logo" style="width:100%;height:100%;object-fit:cover"></span><div><b>TRAORÉ TRANSFERT</b><small>INTERNATIONAL</small></div><button class="close-menu" id="close-menu" aria-label="Fermer">×</button></div><div class="nav-label">Espace de travail</div> <button class="nav active" data-view="transfers"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4-4 4"/><path d="M21 7H8"/><path d="M7 21l-4-4 4-4"/><path d="M3 17h13"/></svg> <span>Transferts</span></button><button class="nav" data-view="dashboard"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg> <span>Tableau de bord</span></button><button class="nav" data-view="agencies"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg> <span>Agences</span></button><button class="nav" data-view="cash"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h13v4"/><path d="M3 7v11a2 2 0 0 0 2 2h15V9H5a2 2 0 0 1-2-2z"/><circle cx="16.5" cy="14.5" r="1"/></svg> <span>Caisses</span></button><button class="nav" data-view="stocks"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg> <span>Stocks</span></button><button class="nav" data-view="settlements"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 0-15-6.7L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 15 6.7L21 16"/><path d="M16 16h5v5"/></svg> <span>Compensation</span></button><button class="nav" data-view="tariffs"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg> <span>Tarification</span></button><button class="nav" data-view="reports"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15v3"/><path d="M12 10v8"/><path d="M17 6v12"/></svg> <span>Rapports</span></button><button class="nav" data-view="audit"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> <span>Journal</span></button> <button class="nav" id="install" hidden><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg> <span>Installer l'application</span></button><div class="sidebar-bottom"><i></i> Copie locale sécurisée</div></aside> <main class="main"><header class="topbar"><div class="heading"><button id="menu-toggle" class="menu-toggle" aria-label="Ouvrir le menu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div><span class="eyebrow">Plateforme de gestion</span><h1 id="page-title">Vue générale</h1></div></div><div class="top-actions"><span class="local-pill" id="mode-pill">● Hors ligne · 100 % local</span><span class="avatar">HA</span></div></header> <div class="notice">Données enregistrées localement sur cet appareil. Exportez régulièrement une sauvegarde JSON pour protéger vos informations. L'application assure le suivi uniquement : aucun mouvement d'argent réel n'est exécuté. <b>Conseil :</b> faites une sauvegarde JSON régulièrement.</div> <section id="view" aria-live="polite"></section><footer>TRAORÉ TRANSFERT INTERNATIONAL · Version V55 · Stockage local hors ligne</footer></main></div><div id="toast" role="status"></div> <script>
 const K="traore.transfer.v4",LEGACY_K="traore.transfer.v3",$=e=>document.querySelector(e),$$=e=>[...document.querySelectorAll(e)],esc=e=>String(e??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[e])),gnf=e=>new Intl.NumberFormat("fr-FR").format(Math.round(e))+" GNF",uid=()=>Math.random().toString(36).slice(2,9),day=e=>new Date(e).toLocaleDateString("fr-FR");let S;function seed(){return{operator:"Administrateur",audit:[],agencies:[{id:"a1",name:"Siège Conakry",city:"Conakry",cash:5e6},{id:"a2",name:"Agence Siguiri",city:"Siguiri",cash:2e6},{id:"a3",name:"Agence Kankan",city:"Kankan",cash:15e5}],transfers:[],cashlog:[],stockItems:[],stockMoves:[],seq:0,tariffs:[{max:5e5,type:"fix",val:1e4},{max:2e6,type:"pct",val:2.5},{max:1e12,type:"pct",val:2}]}}const sid=e=>String(e??"").replace(/[^\w-]/g,"");function validState(e){return!!e&&Array.isArray(e.agencies)&&Array.isArray(e.transfers)}function normalize(e){const t={...e},a=e=>Array.isArray(e)?e:[];var n;return t.operator=String(t.operator||"Administrateur"),t.audit=a(t.audit).filter(e=>e&&"object"==typeof e),t.agencies=a(t.agencies).filter(e=>e&&e.id&&e.name).map(e=>({...e,id:sid(e.id),cash:Number.isFinite(+e.cash)?+e.cash:0})),t.transfers=a(t.transfers).filter(e=>e&&e.id).map(e=>({...e,id:sid(e.id),from:sid(e.from),to:sid(e.to),ref:String(e.ref||""),sender:String(e.sender||""),receiver:String(e.receiver||""),sp:String(e.sp||""),rp:String(e.rp||""),code:String(e.code||"").replace(/\D/g,"").slice(0,6),idDoc:String(e.idDoc||""),se:String(e.se||""),re:String(e.re||""),notifs:(Array.isArray(e.notifs)?e.notifs:[]).slice(-30),trace:(Array.isArray(e.trace)?e.trace:[]).filter(e=>e&&e.ev).slice(-60),amount:+e.amount||0,fee:+e.fee||0,status:["created","paid","cancelled"].includes(e.status)?e.status:"created"})),t.cashlog=a(t.cashlog),t.ops=a(t.ops).filter(e=>e&&e.id).map(e=>({...e,id:sid(e.id),agency:sid(e.agency),type:"withdraw"===e.type?"withdraw":"deposit",amount:+e.amount||0,fee:Math.max(0,+e.fee||0),ref:String(e.ref||""),client:String(e.client||""),phone:String(e.phone||""),note:String(e.note||""),status:"cancelled"===e.status?"cancelled":"done"})),t.opSeq=Number.isFinite(+t.opSeq)?+t.opSeq:0,t.notif=(n=e.notif||{},{mail:["default","outlookapp","outlookpersonal","outlook365","graph"].includes(n.mail)?n.mail:"default",cc:String(n.cc||"224").replace(/\D/g,"")||"224",cid:String(n.cid||"").trim().slice(0,64),tenant:String(n.tenant||"common").trim().slice(0,80)||"common",auto:!!n.auto}),t.opFees=["deposit","withdraw"].reduce((t,a)=>{const n=(e.opFees||{})[a]||{};return t[a]={type:"pct"===n.type?"pct":"fix",val:Math.min(Math.max(0,+n.val||0),"pct"===n.type?100:1e12)},t},{}),t.stockItems=a(t.stockItems).filter(e=>e&&e.id).map(e=>({...e,id:sid(e.id),agency:sid(e.agency)})),t.stockMoves=a(t.stockMoves).map(e=>({...e,item:sid(e.item),agency:sid(e.agency)})),t.tariffs=a(t.tariffs).length?t.tariffs:seed().tariffs,t.seq=Number.isFinite(+t.seq)?+t.seq:0,t}const h53=e=>{let t=3735928559,a=1103547991;for(let n,i=0;i<e.length;i++)n=e.charCodeAt(i),t=Math.imul(t^n,2654435761),a=Math.imul(a^n,1597334677);return t=Math.imul(t^t>>>16,2246822507)^Math.imul(a^a>>>13,3266489909),a=Math.imul(a^a>>>16,2246822507)^Math.imul(t^t>>>13,3266489909),4294967296*(2097151&a)+(t>>>0)},pinHash=e=>String(h53((S.salt||"")+"|"+e));function pinOk(){if(!S.pin)return!0;const e=prompt("Code PIN requis");return null!==e&&(pinHash(e.trim())===S.pin||(toast("PIN incorrect"),!1))}const REFRE=/\b(?:HS|DP|RT)-(?:[A-Z][A-Z0-9]{2})?\d{5}\b/;const DEV=(()=>{try{let d=localStorage.getItem("traore.dev");if(!/^[A-Z][A-Z0-9]{2}$/.test(d||"")){const A="ABCDEFGHJKLMNPQRSTUVWXYZ",B=A+"23456789",r=crypto.getRandomValues(new Uint8Array(3));d=A[r[0]%24]+B[r[1]%32]+B[r[2]%32];localStorage.setItem("traore.dev",d)}return d}catch(e){return"X"+String(Math.floor(Math.random()*1296)).padStart(2,"0")}})(),refNo=(p,n)=>p+"-"+DEV+String(n).padStart(5,"0");const IC={"transfer": "<path d=\"M17 3l4 4-4 4\"/><path d=\"M21 7H8\"/><path d=\"M7 21l-4-4 4-4\"/><path d=\"M3 17h13\"/>", "dashboard": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"5\" rx=\"1\"/><rect x=\"14\" y=\"12\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"3\" y=\"16\" width=\"7\" height=\"5\" rx=\"1\"/>", "agencies": "<path d=\"M3 21h18\"/><path d=\"M5 21V7l7-4 7 4v14\"/><path d=\"M9 21v-6h6v6\"/>", "cash": "<path d=\"M3 7a2 2 0 0 1 2-2h13v4\"/><path d=\"M3 7v11a2 2 0 0 0 2 2h15V9H5a2 2 0 0 1-2-2z\"/><circle cx=\"16.5\" cy=\"14.5\" r=\"1\"/>", "stocks": "<path d=\"M21 8l-9-5-9 5v8l9 5 9-5z\"/><path d=\"M3 8l9 5 9-5\"/><path d=\"M12 13v8\"/>", "settle": "<path d=\"M21 12a9 9 0 0 0-15-6.7L3 8\"/><path d=\"M3 3v5h5\"/><path d=\"M3 12a9 9 0 0 0 15 6.7L21 16\"/><path d=\"M16 16h5v5\"/>", "percent": "<path d=\"M19 5L5 19\"/><circle cx=\"6.5\" cy=\"6.5\" r=\"2.5\"/><circle cx=\"17.5\" cy=\"17.5\" r=\"2.5\"/>", "chart": "<path d=\"M3 3v18h18\"/><path d=\"M7 15v3\"/><path d=\"M12 10v8\"/><path d=\"M17 6v12\"/>", "clock": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/>", "download": "<path d=\"M12 3v12\"/><path d=\"M7 11l5 5 5-5\"/><path d=\"M4 21h16\"/>", "receipt": "<path d=\"M6 3h12v18l-3-2-3 2-3-2-3 2z\"/><path d=\"M9 8h6M9 12h6\"/>", "search": "<circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.3-4.3\"/>", "bell": "<path d=\"M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8\"/><path d=\"M10 21a2 2 0 0 0 4 0\"/>", "phone": "<path d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z\"/>", "print": "<path d=\"M6 9V3h12v6\"/><rect x=\"4\" y=\"9\" width=\"16\" height=\"8\" rx=\"2\"/><path d=\"M7 14h10v7H7z\"/>", "menu": "<path d=\"M4 6h16M4 12h16M4 18h16\"/>"},ic=n=>'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(IC[n]||"")+"</svg>";function updBadge(){const b=$('.nav[data-view="transfers"]');if(!b)return;b.querySelector(".bdg")?.remove();const n=S.transfers.filter(t=>t.status==="created").length;if(n){const x=document.createElement("b");x.className="bdg";x.textContent=n>99?"99+":n;x.title=n+" transfert(s) à payer";b.appendChild(x)}}function dupRefs(){const m={};S.transfers.concat(S.ops||[]).forEach(t=>{if(t&&t.ref)(m[t.ref]=m[t.ref]||new Set()).add(t.id)});return Object.values(m).filter(x=>x.size>1).length}function log(e,t){S.audit=Array.isArray(S.audit)?S.audit:[],t=String(t??""),S.audit.push({date:Date.now(),action:e,detail:t,ref:(t.match(REFRE)||[""])[0],op:S.operator||"Administrateur"}),S.audit.length>3e3&&(S.audit=S.audit.slice(-3e3))}function receiptHTML(e){const t=ag(e.from),a=ag(e.to),n="paid"===e.status?"PAYÉ":"cancelled"===e.status?"ANNULÉ":"À PAYER",i=e=>new Date(e).toLocaleString("fr-FR"),s=(e,t)=>`<div class="line"><span>${e}</span><strong>${t}</strong></div>`,o="paid"===e.status?"ok":"cancelled"===e.status?"ko":"wait",r=`${esc(t.city||t.name)} <b>→</b> ${esc(a.city||a.name)}`;return`<!doctype html>
@@ -6488,11 +6889,11 @@ const pwToggle=(inputs,btn)=>{btn.onclick=()=>{const h=inputs[0].type==="passwor
 function showGate(mode,msg){
   pill.hidden=true;gate.hidden=false;const d=rd();
   if(mode==="setup"){
-    gate.innerHTML='<form><h2>TRAORÉ TRANSFERT</h2><small>Première utilisation : créez le compte administrateur. Tout reste sur cet appareil, sans Internet.</small><input id="cgn" autocomplete="off" placeholder="Nom de l\'administrateur" maxlength="60" required><input id="cgp" type="password" autocomplete="new-password" placeholder="Code d\'accès (6 caractères minimum)" required><input id="cgq" type="password" autocomplete="new-password" placeholder="Confirmer le code" required><button type="button" class="lk" id="cgs">Afficher le code</button><div class="er" id="cgr" role="alert"></div><button type="submit">Créer le compte</button></form>';
+    gate.innerHTML='<form><h2>Créer le premier administrateur</h2><small>Configuration initiale réservée au propriétaire de l’application. Cette étape disparaît après la création du premier compte.</small><input id="cgn" autocomplete="off" placeholder="Nom de l\'administrateur" maxlength="60" required><input id="cgp" type="password" autocomplete="new-password" placeholder="Code administrateur (8 caractères minimum)" minlength="8" required><input id="cgq" type="password" autocomplete="new-password" placeholder="Confirmer le code administrateur" minlength="8" required><button type="button" class="lk" id="cgs">Afficher le code</button><div class="er" id="cgr" role="alert"></div><button type="submit">Créer le compte</button></form>';
     pwToggle([gate.querySelector("#cgp"),gate.querySelector("#cgq")],gate.querySelector("#cgs"));
     gate.querySelector("form").onsubmit=async ev=>{ev.preventDefault();const b=ev.target.querySelector('button[type="submit"]');if(b.disabled)return;
       const nom=gate.querySelector("#cgn").value.trim(),c=gate.querySelector("#cgp").value,c2=gate.querySelector("#cgq").value;
-      if(!nom)return say("Indiquez le nom");if(!okCode(c))return say("Code : 6 caractères minimum");if(c!==c2)return say("Les deux codes sont différents");
+      if(!nom)return say("Indiquez le nom");if(String(c||"").length<8)return say("Le code administrateur doit contenir au moins 8 caractères");if(c!==c2)return say("Les deux codes sont différents");
       b.disabled=true;say("Création…",1);
       try{const salt=rnd(16),id=rnd(8),rs=rnd(16),rec=mkRec();
         const u={id,nom:nom.slice(0,60),role:"admin",agence:"",actif:true,salt,hash:await mkHash(c,salt),creeLe:Date.now()};
@@ -6501,20 +6902,21 @@ function showGate(mode,msg){
       }catch(e){say("Création impossible")}finally{b.disabled=false}};
   }else if(mode==="register"){
     const adms=(d&&d.users||[]).filter(u=>u.actif&&u.role==="admin"),ag=(S&&S.agencies||[]).map(a=>'<option value="'+esc(a.id)+'">'+esc(a.name)+'</option>').join("");
-    gate.innerHTML='<form><h2>Inscription</h2><small>Réservée à l\'administrateur : confirmez votre code, puis renseignez le nouvel utilisateur.</small><select id="cga" style="padding:11px;border:1px solid #cbd5e1;border-radius:8px;font:inherit">'+adms.map(u=>'<option value="'+esc(u.id)+'">'+esc(u.nom)+' (admin)</option>').join("")+'</select><input id="cgp" type="password" autocomplete="current-password" placeholder="Code de l\'administrateur" required><hr style="border:0;border-top:1px solid #e2e8f0;width:100%"><input id="cgn" autocomplete="off" placeholder="Nom complet du nouvel utilisateur" maxlength="60" required><input id="cgc" type="text" autocomplete="off" placeholder="Code d\'accès (6 caractères min.)" minlength="6" required><div style="display:flex;gap:8px"><select id="cgr2" style="flex:1;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font:inherit"><option value="agent">Agent</option><option value="admin">Administrateur</option></select><select id="cgg" style="flex:1;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font:inherit"><option value="">Toutes agences</option>'+ag+'</select></div><div class="er" id="cgr" role="alert"></div><button type="submit">Inscrire</button><button type="button" class="lk" id="cgb">Retour à la connexion</button></form>';
+    gate.innerHTML='<form class="tti-agent-register"><h2>Inscription d’un agent</h2><small>Réservée à l’administrateur. Confirmez votre code confidentiel pour autoriser la création du compte.</small><div class="tti-admin-private">Vérification administrateur · identité non affichée</div><label class="tti-register-label" for="cgp">1. Code administrateur</label><input id="cgp" type="password" autocomplete="current-password" placeholder="Saisir le code confidentiel administrateur" required><hr style="border:0;border-top:1px solid #e2e8f0;width:100%"><label class="tti-register-label" for="cgn">2. Nom du nouvel agent</label><input id="cgn" autocomplete="off" placeholder="Nom complet du nouvel agent" maxlength="60" required><label class="tti-register-label" for="cgc">3. Code personnel de l’agent</label><input id="cgc" type="password" autocomplete="new-password" placeholder="8 caractères minimum" minlength="8" required><label class="tti-register-label" for="cgg">4. Agence d’affectation</label><select id="cgg"><option value="">Toutes agences</option>'+ag+'</select><div class="tti-admin-private">Communiquez à l’agent uniquement son nom d’utilisateur et son code personnel. Ne partagez jamais le code administrateur.</div><div class="er" id="cgr" role="alert"></div><button type="submit">Créer le compte agent</button><button type="button" class="lk" id="cgb">Retour à la connexion</button></form>';
     gate.querySelector("#cgb").onclick=()=>showGate("login");
     gate.querySelector("form").onsubmit=async ev=>{ev.preventDefault();const b=ev.target.querySelector('button[type="submit"]');if(b.disabled)return;
       let f={};try{f=JSON.parse(localStorage.getItem(FK))||{}}catch(e){}
       if(f.until&&f.until>Date.now())return say("Trop d'essais : réessayez dans "+Math.ceil((f.until-Date.now())/1000)+" s");
-      const dd=rd(),ad=dd&&dd.users.find(x=>x.id===gate.querySelector("#cga").value&&x.role==="admin"&&x.actif);if(!ad)return say("Administrateur indisponible");
+      const dd=rd(),adms=dd&&dd.users.filter(x=>x.role==="admin"&&x.actif)||[];if(!adms.length)return say("Aucun administrateur actif");
       const nom=gate.querySelector("#cgn").value.trim(),c=gate.querySelector("#cgc").value;
-      if(!nom)return say("Indiquez le nom");if(!okCode(c))return say("Code : 6 caractères minimum");
-      if(dd.users.some(x=>x.nom.toLowerCase()===nom.toLowerCase()))return say("Ce nom existe déjà");
-      b.disabled=true;say("Vérification…",1);
-      try{if(!(await chkHash(ad.hash,gate.querySelector("#cgp").value,ad.salt))){f.n=(f.n||0)+1;if(f.n>=5)f.until=Date.now()+Math.min(30*Math.pow(2,f.n-5),900)*1000;try{localStorage.setItem(FK,JSON.stringify(f))}catch(e){}return say("Code administrateur incorrect")}
+      if(!nom)return say("Indiquez le nom");if(c.length<8)return say("Le code personnel doit contenir au moins 8 caractères");
+      if(dd.users.some(x=>String(x.nom||"").toLowerCase()===nom.toLowerCase()))return say("Ce nom existe déjà");
+      b.disabled=true;say("Vérification administrateur…",1);
+      try{const adminCode=gate.querySelector("#cgp").value;let ad=null;for(const candidate of adms){if(await chkHash(candidate.hash,adminCode,candidate.salt)){ad=candidate;break}}
+        if(!ad){f.n=(f.n||0)+1;if(f.n>=5)f.until=Date.now()+Math.min(30*Math.pow(2,f.n-5),900)*1000;try{localStorage.setItem(FK,JSON.stringify(f))}catch(e){}return say("Code administrateur incorrect")}
         try{localStorage.removeItem(FK)}catch(e){}
-        const salt=rnd(16);dd.users.push({id:rnd(8),nom:nom.slice(0,60),role:gate.querySelector("#cgr2").value==="admin"?"admin":"agent",agence:gate.querySelector("#cgg").value,actif:true,salt,hash:await mkHash(c,salt),creeLe:Date.now(),creePar:ad.nom});
-        if(wr(dd))showGate("login","Compte créé : "+nom+". Vous pouvez vous connecter.")}
+        const salt=rnd(16);dd.users.push({id:rnd(8),nom:nom.slice(0,60),role:"agent",agence:gate.querySelector("#cgg").value,actif:true,salt,hash:await mkHash(c,salt),creeLe:Date.now(),creePar:ad.id});
+        if(wr(dd))showGate("login","Compte agent créé : "+nom+". Communiquez-lui uniquement son code personnel.")}
       finally{b.disabled=false}};
   }else if(mode==="recover"){
     gate.innerHTML='<form><h2>Code oublié</h2><small>Saisissez la clé de secours remise à la création du compte administrateur, puis un nouveau code.</small><input id="cgk" autocomplete="off" autocapitalize="characters" placeholder="Clé de secours (XXXX-XXXX-XXXX)" required><input id="cgp" type="password" autocomplete="new-password" placeholder="Nouveau code (6 caractères min.)" required><div class="er" id="cgr" role="alert"></div><button type="submit">Réinitialiser le code administrateur</button><button type="button" class="lk" id="cgb">Retour</button></form>';
@@ -6527,7 +6929,7 @@ function showGate(mode,msg){
       if(!wr(dd))return;try{localStorage.removeItem(FK)}catch(e){}showRecovery(rec,adm,"Code réinitialisé.")};
   }else{
     const us=(d&&d.users||[]).filter(u=>u.actif);
-    gate.innerHTML='<form class="tti-reference-login"><header class="tti-reference-head"><div class="tti-reference-mark">TTI<span>↗</span></div><div class="tti-reference-title">TRAORÉ TRANSFERT<strong>INTERNATIONAL</strong></div><div class="tti-reference-services">Transfert d’argent&nbsp; • &nbsp;Change de devises&nbsp; • &nbsp;Services logistiques</div></header><div class="tti-reference-fields"><label class="tti-reference-field"><span class="tti-field-icon">●</span><input id="cgu" type="text" autocomplete="username" placeholder="Nom d’utilisateur" maxlength="60" required></label><label class="tti-reference-field"><span class="tti-field-icon">▣</span><input id="cgp" type="password" autocomplete="current-password" placeholder="Mot de passe du profil" required><button type="button" class="tti-eye" id="cgs" aria-label="Afficher le mot de passe">◉</button></label><div class="tti-reference-hint">Choisissez votre profil et saisissez son mot de passe.</div><div class="er" id="cgr" role="alert"></div><button class="tti-reference-submit" type="submit"><span>⇥</span> Se connecter</button><label class="tti-shared"><input id="cgm" type="checkbox"> Appareil partagé (déconnexion complète à la sortie)</label></div><div class="tti-reference-secure"><span>◇</span><b>Connexion sécurisée</b></div><nav class="tti-reference-actions"><button type="button" class="lk" id="cgi">Inscription administrateur</button><button type="button" class="lk" id="cgf">Code administrateur oublié ?</button></nav></form>';
+    gate.innerHTML='<form class="tti-reference-login"><header class="tti-reference-head"><div class="tti-login-kicker"><span></span> ESPACE CLIENT &amp; AGENT <span></span></div><div class="tti-reference-mark">TTI<span>↗</span></div><div class="tti-reference-title">TRAORÉ TRANSFERT<strong>INTERNATIONAL</strong></div><div class="tti-reference-services">Transfert d’argent&nbsp; • &nbsp;Change de devises&nbsp; • &nbsp;Services logistiques</div></header><div class="tti-reference-fields"><label class="tti-reference-field"><span class="tti-field-icon">●</span><input id="cgu" type="text" autocomplete="username" placeholder="Nom d’utilisateur" maxlength="60" required></label><label class="tti-reference-field"><span class="tti-field-icon">▣</span><input id="cgp" type="password" autocomplete="current-password" placeholder="Mot de passe du profil" required><button type="button" class="tti-eye" id="cgs" aria-label="Afficher le mot de passe">◉</button></label><div class="tti-reference-hint">Saisissez votre nom d’utilisateur et votre mot de passe.</div><div class="er" id="cgr" role="alert"></div><button class="tti-reference-submit" type="submit"><span>⇥</span> Se connecter</button><label class="tti-shared"><input id="cgm" type="checkbox"> Appareil partagé : ne pas mémoriser la session</label></div><div class="tti-reference-secure"><span>◇</span><b>Connexion sécurisée</b></div><nav class="tti-reference-actions"><button type="button" class="lk" id="cgi">Inscription administrateur</button><button type="button" class="lk" id="cgf">Code administrateur oublié ?</button></nav></form>';
     pwToggle([gate.querySelector("#cgp")],gate.querySelector("#cgs"));
     gate.querySelector("#cgf").onclick=()=>showGate("recover");gate.querySelector("#cgi").onclick=()=>showGate("register");
     gate.querySelector("form").onsubmit=async ev=>{ev.preventDefault();const b=ev.target.querySelector('button[type="submit"]');if(b.disabled)return;
@@ -6541,7 +6943,7 @@ function showGate(mode,msg){
             if(!wr(dd))return say("Connexion vérifiée, mais migration du code impossible. Vérifiez l’espace disponible.");
           }
           try{localStorage.removeItem(FK)}catch(e){}
-          const keep=gate.querySelector("#cgm").checked;try{(keep?localStorage:sessionStorage).setItem(SK,u.id);(keep?sessionStorage:localStorage).removeItem(SK)}catch(e){}enter(u)}
+          const shared=gate.querySelector("#cgm").checked;try{(shared?sessionStorage:localStorage).setItem(SK,u.id);(shared?localStorage:sessionStorage).removeItem(SK)}catch(e){}enter(u)}
         else{f.n=(f.n||0)+1;if(f.n>=5){f.until=Date.now()+Math.min(30*Math.pow(2,f.n-5),900)*1000}try{localStorage.setItem(FK,JSON.stringify(f))}catch(e){}
           say(f.until&&f.until>Date.now()?"Trop d'essais : patientez "+Math.ceil((f.until-Date.now())/1000)+" s":"Code incorrect");gate.querySelector("#cgp").select()}}
       finally{b.disabled=false}};
@@ -6590,7 +6992,7 @@ function openUsers(){
   const is="padding:10px;border:1px solid #cbd5e1;border-radius:8px;font:inherit";
   const bs="padding:6px 10px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;color:#14233a;cursor:pointer;font:inherit;font-size:12px";
   m.innerHTML=`<div style="background:#fff;color:#14233a;border-radius:16px;padding:18px;width:min(860px,100%);max-height:92vh;overflow:auto">
-<div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:17px">Gestion des utilisateurs</b><button id="uc" type="button" style="border:0;background:none;font-size:22px;cursor:pointer">×</button></div>
+<div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:17px">Gestion des utilisateurs et administrateurs</b><button id="uc" type="button" style="border:0;background:none;font-size:22px;cursor:pointer">×</button></div>
 <div style="display:flex;gap:8px;margin:12px 0 4px;flex-wrap:wrap"><input id="us" placeholder="Rechercher un nom…" autocomplete="off" style="${is};flex:1;min-width:160px"><select id="ufl" style="${is}"><option value="">Tous</option><option value="admin">Administrateurs</option><option value="agent">Agents</option><option value="off">Désactivés</option></select></div>
 <div id="uk" style="font-size:12px;color:#64748b;margin-bottom:6px"></div>
 <div id="ul" style="overflow-x:auto"></div>
@@ -6643,12 +7045,14 @@ function openUsers(){
       if(dd.users.some(x=>x.id!==editId&&x.nom.toLowerCase()===nom.toLowerCase()))return msg("Ce nom existe déjà");
       if(!editId){
         if(!okCode(c))return msg("Code : 6 caractères minimum");
-        const salt=rnd(16);dd.users.push({id:rnd(8),nom,role,agence,actif:true,salt,hash:await mkHash(c,salt),creeLe:Date.now(),creePar:cur.nom});
+        if(role==="admin"&&!(await askAdmin("Création d’un nouvel administrateur"))){return}
+        const salt=rnd(16);dd.users.push({id:rnd(8),nom,role,agence,actif:true,salt,hash:await mkHash(c,salt),creeLe:Date.now(),creePar:cur.id});
         if(wr(dd)){logU("Utilisateur créé",nom+" · "+(role==="admin"?"admin":"agent"));resetForm();msg("Compte créé : "+nom+" · code : "+c+" (à communiquer à l'intéressé)",1);list()}
       }else{
         const u=dd.users.find(x=>x.id===editId);if(!u){resetForm();return msg("Utilisateur introuvable")}
         if(c&&!okCode(c))return msg("Code : 6 caractères minimum");
         const rl=u.id===cur.id?u.role:role;
+        if(u.role!=="admin"&&rl==="admin"&&!(await askAdmin("Promotion de cet utilisateur au rôle administrateur"))){return}
         if(u.role==="admin"&&rl!=="admin"&&u.actif&&nbAdm(dd)<2)return msg("Gardez au moins un administrateur actif");
         const av=u.nom+" · "+u.role+" · "+agName(u.agence);
         u.nom=nom;u.role=rl;u.agence=agence;
