@@ -1,0 +1,19 @@
+MISE EN SERVICE FIREBASE (projet transfert-international)
+
+1. Console Firebase > Authentication > Méthode de connexion > activer "E-mail/Mot de passe".
+2. Authentication > Utilisateurs > "Ajouter un utilisateur" : créez un compte par employé
+   (l'application n'a pas d'inscription libre, seuls ces comptes peuvent se connecter).
+3. Firestore Database > Créer une base (mode production).
+4. Firestore > Règles : collez le contenu de firestore.rules, puis Publier.
+5. Authentication > Paramètres > Domaines autorisés : ajoutez le domaine où l'application est hébergée.
+6. Ouvrez l'application, connectez-vous : le premier appareil envoie ses données locales dans le cloud ;
+   les autres appareils les fusionnent puis restent synchronisés en temps réel.
+
+LIMITES CONNUES
+- Les listes (transferts, opérations, caisse, journal) sont fusionnées par identifiant ; un transfert payé/annulé
+  l'emporte sur "créé". Les suppressions et la "Réinitialisation" ne sont pas propagées (les données reviennent du cloud).
+- Soldes de caisse : ils sont recalculés après chaque fusion (solde d'ouverture + somme des mouvements de caisse
+  de l'agence). Deux agences qui travaillent en même temps ne s'écrasent donc plus. Le solde d'ouverture est fixé
+  au premier envoi vers le cloud. Si vous corrigez un solde, passez par un "Mouvement de caisse" (pas par une
+  modification directe), sinon la correction sera annulée au recalcul.
+- Tous les comptes connectés voient toutes les données (pas de droits par agence pour l'instant).
