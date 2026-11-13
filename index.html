@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a0a0c"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png" type="image/png"><link rel="apple-touch-icon" href="icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><title>TRAORÉ TRANSFERT INTERNATIONAL</title> <style>
+<head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob: data: https://*.googleapis.com https://*.firebaseapp.com; frame-src 'self' blob: data: about:; object-src 'none'; base-uri 'self'; form-action 'self'"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a0a0c"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png" type="image/png"><link rel="apple-touch-icon" href="icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><title>TRAORÉ TRANSFERT INTERNATIONAL</title> <style>
 :root
 {
   --bg:#f3f5f8;
@@ -6874,7 +6874,7 @@ async function chkHash(stored,code,salt){
 const ALPHA="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 const mkRec=()=>{const a=crypto.getRandomValues(new Uint8Array(12));let s="";for(const x of a)s+=ALPHA[x%ALPHA.length];return s.match(/.{4}/g).join("-")};
 const normRec=s=>String(s||"").toUpperCase().replace(/[^A-Z0-9]/g,"");
-const okCode=c=>typeof c==="string"&&c.length>=6&&c.length<=64;
+const okCode=c=>typeof c==="string"&&c.length>=8&&c.length<=64;
 
 const css=document.createElement("style");css.textContent=`#cg{position:fixed;inset:0;z-index:99999;background:linear-gradient(115deg,rgba(5,20,45,.70),rgba(8,37,75,.34)),url("login-reference-bg.webp") center center/cover no-repeat;display:grid;place-items:center;padding:16px;font:15px system-ui,sans-serif}#cg form{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.6);color:#14233a;width:min(380px,100%);border-radius:20px;padding:28px;display:grid;gap:12px;box-shadow:0 24px 70px rgba(0,10,30,.38)}#cg h2{margin:0;font-size:18px}#cg small{color:#64748b}#cg input{padding:11px;border:1px solid #cbd5e1;border-radius:8px;font:inherit}#cg button{padding:11px;border:0;border-radius:8px;background:#e8a317;color:#0b1d35;font-weight:700;font:inherit;font-weight:700;cursor:pointer}#cg .lk{background:none;color:#123b59;font-weight:400;text-decoration:underline;padding:4px}#cg .er{color:#b91c1c;font-size:13px;min-height:18px}#sp{position:fixed;left:8px;bottom:8px;z-index:9999;background:#0b1d35e6;color:#e6edf7;font:12px system-ui,sans-serif;padding:5px 10px;border-radius:99px;display:flex;gap:8px;align-items:center;max-width:calc(100vw - 16px)}#sp i{width:8px;height:8px;border-radius:50%;background:#94a3b8;flex:none}#sp.ok i{background:#22c55e}#sp.bad i{background:#ef4444}#sp.wait i{background:#e8a317}#sp b{font-weight:400;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#sp button{background:none;border:0;color:#e8a317;font:inherit;cursor:pointer;padding:0}#cg[hidden],#sp[hidden]{display:none!important}#cg select{width:100%}#sp button{margin-left:2px}`;document.head.appendChild(css);
 const gate=document.createElement("div");gate.id="cg";gate.hidden=true;document.body.appendChild(gate);
@@ -6910,7 +6910,7 @@ function showGate(mode,msg){
       const dd=rd(),adms=dd&&dd.users.filter(x=>x.role==="admin"&&x.actif)||[];if(!adms.length)return say("Aucun administrateur actif");
       const nom=gate.querySelector("#cgn").value.trim(),c=gate.querySelector("#cgc").value;
       if(!nom)return say("Indiquez le nom");if(c.length<8)return say("Le code personnel doit contenir au moins 8 caractères");
-      if(dd.users.some(x=>String(x.nom||"").toLowerCase()===nom.toLowerCase()))return say("Ce nom existe déjà");
+      if(dd.users.some(x=>String(x.nom||"").trim().toLocaleLowerCase("fr")===nom.toLocaleLowerCase("fr")))return say("Ce nom existe déjà");
       b.disabled=true;say("Vérification administrateur…",1);
       try{const adminCode=gate.querySelector("#cgp").value;let ad=null;for(const candidate of adms){if(await chkHash(candidate.hash,adminCode,candidate.salt)){ad=candidate;break}}
         if(!ad){f.n=(f.n||0)+1;if(f.n>=5)f.until=Date.now()+Math.min(30*Math.pow(2,f.n-5),900)*1000;try{localStorage.setItem(FK,JSON.stringify(f))}catch(e){}return say("Code administrateur incorrect")}
@@ -6919,10 +6919,10 @@ function showGate(mode,msg){
         if(wr(dd))showGate("login","Compte agent créé : "+nom+". Communiquez-lui uniquement son code personnel.")}
       finally{b.disabled=false}};
   }else if(mode==="recover"){
-    gate.innerHTML='<form><h2>Code oublié</h2><small>Saisissez la clé de secours remise à la création du compte administrateur, puis un nouveau code.</small><input id="cgk" autocomplete="off" autocapitalize="characters" placeholder="Clé de secours (XXXX-XXXX-XXXX)" required><input id="cgp" type="password" autocomplete="new-password" placeholder="Nouveau code (6 caractères min.)" required><div class="er" id="cgr" role="alert"></div><button type="submit">Réinitialiser le code administrateur</button><button type="button" class="lk" id="cgb">Retour</button></form>';
+    gate.innerHTML='<form><h2>Code oublié</h2><small>Saisissez la clé de secours remise à la création du compte administrateur, puis un nouveau code.</small><input id="cgk" autocomplete="off" autocapitalize="characters" placeholder="Clé de secours (XXXX-XXXX-XXXX)" required><input id="cgp" type="password" autocomplete="new-password" placeholder="Nouveau code (8 caractères min.)" required><div class="er" id="cgr" role="alert"></div><button type="submit">Réinitialiser le code administrateur</button><button type="button" class="lk" id="cgb">Retour</button></form>';
     gate.querySelector("#cgb").onclick=()=>showGate("login");
     gate.querySelector("form").onsubmit=async ev=>{ev.preventDefault();const dd=rd();if(!dd||!dd.rec)return say("Aucune clé de secours enregistrée");
-      const c=gate.querySelector("#cgp").value;if(!okCode(c))return say("Code : 6 caractères minimum");
+      const c=gate.querySelector("#cgp").value;if(!okCode(c))return say("Code : 8 caractères minimum");
       if(!(await chkHash(dd.rec.hash,normRec(gate.querySelector("#cgk").value),dd.rec.salt)))return say("Clé de secours incorrecte");
       const adm=dd.users.find(u=>u.role==="admin"&&u.actif)||dd.users.find(u=>u.role==="admin");if(!adm)return say("Aucun administrateur");
       adm.salt=rnd(16);adm.hash=await mkHash(c,adm.salt);adm.actif=true;const rec=mkRec(),rs=rnd(16);dd.rec={salt:rs,hash:await mkHash(normRec(rec),rs)};
@@ -6966,20 +6966,66 @@ function enter(u){
 function logout(){cur=null;syncNav();try{localStorage.removeItem(SK);sessionStorage.removeItem(SK)}catch(e){}showGate("login")}
 function drawPill(){
   pill.className="ok";pill.hidden=false;
-  pill.innerHTML='<i></i><b>'+esc(cur.nom)+' · '+(cur.role==="admin"?"admin":"agent")+' · hors ligne</b>'+(isAdm()?'<button type="button" data-u="users">Utilisateurs</button>':'')+'<button type="button" data-u="code">Mon code</button><button type="button" data-u="out">Déconnexion</button>';
+  pill.innerHTML='<i></i><b>'+esc(cur.nom)+' · '+(cur.role==="admin"?"admin":"agent")+' · hors ligne</b>'+(isAdm()?'<button type="button" data-u="users">Utilisateurs</button><button type="button" data-u="cloud">Cloud</button>':'')+'<button type="button" data-u="code">Mon code</button><button type="button" data-u="out">Déconnexion</button>';
   const sb=document.querySelector(".sidebar-bottom");
   if(sb)sb.innerHTML='<div class="tti-session-state"><i></i><span>Session active · '+esc(cur.nom)+'</span></div><button type="button" class="tti-sidebar-logout" id="tti-sidebar-logout">↪ Déconnexion</button>';
 }
 document.addEventListener("click",ev=>{if(ev.target.closest("#tti-sidebar-logout")){ev.preventDefault();logout()}});
+
+/* ----- V67 : sauvegarde cloud Firebase (administrateur uniquement, à la demande, hors ligne inchangé) ----- */
+const FB_CFG={apiKey:"AIzaSyA8p1F-sqwnAMGVn5sfvAe9___UNQvRNJs",authDomain:"traore-transfert.firebaseapp.com",projectId:"traore-transfert",storageBucket:"traore-transfert.firebasestorage.app",messagingSenderId:"224274017152",appId:"1:224274017152:web:293272d367f2813ca3af65"};
+let fbMods=null;
+async function fbLoad(){
+  if(fbMods)return fbMods;
+  const b="https://www.gstatic.com/firebasejs/10.14.1/";
+  const [app,auth,fs]=await Promise.all([import(b+"firebase-app.js"),import(b+"firebase-auth.js"),import(b+"firebase-firestore.js")]);
+  const a=app.getApps().length?app.getApp():app.initializeApp(FB_CFG);
+  fbMods={auth,fs,au:auth.getAuth(a),db:fs.getFirestore(a)};
+  return fbMods;
+}
+async function gz(str){const cs=new CompressionStream("gzip"),w=cs.writable.getWriter();w.write(new TextEncoder().encode(str));w.close();const u=new Uint8Array(await new Response(cs.readable).arrayBuffer());let bin="";for(let i=0;i<u.length;i+=0x8000)bin+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(bin)}
+async function gunz(b64){const bin=atob(b64),u=Uint8Array.from(bin,c=>c.charCodeAt(0)),ds=new DecompressionStream("gzip"),w=ds.writable.getWriter();w.write(u);w.close();return new Response(ds.readable).text()}
+async function cloudMenu(){
+  if(!isAdm())return;
+  if(!navigator.onLine)return alert("Connexion internet requise pour la sauvegarde cloud.");
+  if(typeof CompressionStream==="undefined")return alert("Navigateur trop ancien pour la sauvegarde cloud. Utilisez la sauvegarde JSON.");
+  const act=prompt("Sauvegarde cloud\n1 = Envoyer la sauvegarde\n2 = Restaurer la dernière sauvegarde");
+  if(act!=="1"&&act!=="2")return;
+  try{
+    const F=await fbLoad();
+    if(!F.au.currentUser){
+      const em=prompt("E-mail Firebase de l'administrateur");if(!em)return;
+      const pw=prompt("Mot de passe Firebase");if(!pw)return;
+      await F.auth.signInWithEmailAndPassword(F.au,em.trim(),pw);
+    }
+    const ref=F.fs.doc(F.db,"backups",F.au.currentUser.uid);
+    if(act==="1"){
+      const data=await gz(JSON.stringify(S));
+      if(data.length>900000)return alert("Sauvegarde trop volumineuse pour le cloud ("+Math.round(data.length/1024)+" Ko, max ≈ 900 Ko). Utilisez la sauvegarde JSON.");
+      await F.fs.setDoc(ref,{data,size:data.length,app:"V67",savedAt:F.fs.serverTimestamp(),savedBy:cur.nom});
+      try{localStorage.setItem(BK,String(Date.now()))}catch(e){}
+      toast("Sauvegarde cloud envoyée ("+Math.round(data.length/1024)+" Ko)");
+    }else{
+      const snap=await F.fs.getDoc(ref);if(!snap.exists())return alert("Aucune sauvegarde cloud trouvée.");
+      const d=snap.data(),t=JSON.parse(await gunz(d.data));
+      if(!validState(t))return alert("Sauvegarde cloud invalide.");
+      const when=d.savedAt&&d.savedAt.toDate?d.savedAt.toDate().toLocaleString("fr-FR"):"date inconnue";
+      if(!confirm("Remplacer les données actuelles par la sauvegarde du "+when+" ? Une copie des données actuelles sera conservée."))return;
+      try{localStorage.setItem(K+".prev",JSON.stringify(S))}catch(e){}
+      S=normalize(t);log("Restauration cloud",when);save();render();toast("Sauvegarde cloud restaurée");
+    }
+  }catch(e){alert("Cloud : "+(e&&e.code?e.code:"échec")+"\nVérifiez : Authentication (e-mail/mot de passe), profil admin dans Firestore, règles publiées.")}
+}
 pill.addEventListener("click",async ev=>{const b=ev.target.closest("[data-u]");if(!b||!cur)return;
   if(b.dataset.u==="out")return logout();
   if(b.dataset.u==="users")return openUsers();
+  if(b.dataset.u==="cloud")return cloudMenu();
   if(b.dataset.u==="code")return changeCode(cur.id,true)});
 
 async function changeCode(id,self){
   const d=rd();if(!d)return;const u=d.users.find(x=>x.id===id);if(!u)return;
   if(self){const old=prompt("Code actuel");if(old==null)return;if(!(await chkHash(u.hash,old,u.salt)))return alert("Code actuel incorrect")}
-  const n=prompt("Nouveau code pour "+u.nom+" (6 caractères minimum)");if(n==null)return;if(!okCode(n))return alert("Code : 6 caractères minimum");
+  const n=prompt("Nouveau code pour "+u.nom+" (8 caractères minimum)");if(n==null)return;if(!okCode(n))return alert("Code : 8 caractères minimum");
   u.salt=rnd(16);u.hash=await mkHash(n,u.salt);if(wr(d)){try{S.audit&&log("Code modifié",u.nom)}catch(e){}alert("Code modifié")}
 }
 
@@ -6998,7 +7044,7 @@ function openUsers(){
 <div id="ul" style="overflow-x:auto"></div>
 <form id="uf" style="display:grid;gap:8px;border-top:1px solid #e2e8f0;padding-top:12px;margin-top:12px"><b id="uh">Nouvel utilisateur</b>
 <input id="un" placeholder="Nom complet" required maxlength="60" autocomplete="off" style="${is}">
-<div style="display:flex;gap:8px"><input id="up" type="text" placeholder="Code d'accès (6 caractères min.)" autocomplete="off" style="${is};flex:1"><button type="button" id="ug" style="${bs}">Générer</button></div>
+<div style="display:flex;gap:8px"><input id="up" type="text" placeholder="Code d'accès (8 caractères min.)" autocomplete="off" style="${is};flex:1"><button type="button" id="ug" style="${bs}">Générer</button></div>
 <div style="display:flex;gap:8px"><select id="ur" style="${is};flex:1"><option value="agent">Agent</option><option value="admin">Administrateur</option></select><select id="ua" style="${is};flex:1"><option value="">Toutes agences</option>${ag}</select></div>
 <div id="um2" style="min-height:18px;font-size:13px"></div>
 <div style="display:flex;gap:8px"><button id="us2" type="submit" style="padding:10px 14px;border:0;border-radius:8px;background:#e8a317;font-weight:700;cursor:pointer">Créer le compte</button><button id="ux" type="button" hidden style="${bs}">Annuler la modification</button></div></form></div>`;
@@ -7009,7 +7055,7 @@ function openUsers(){
   const nbAdm=d=>d.users.filter(x=>x.role==="admin"&&x.actif).length;
   const agName=id=>((S.agencies||[]).find(a=>a.id===id)||{}).name||"Toutes";
   let editId=null;
-  const resetForm=()=>{editId=null;q("#uf").reset();q("#uh").textContent="Nouvel utilisateur";q("#us2").textContent="Créer le compte";q("#ux").hidden=true;q("#ur").disabled=false;q("#up").placeholder="Code d'accès (6 caractères min.)"};
+  const resetForm=()=>{editId=null;q("#uf").reset();q("#uh").textContent="Nouvel utilisateur";q("#us2").textContent="Créer le compte";q("#ux").hidden=true;q("#ur").disabled=false;q("#up").placeholder="Code d'accès (8 caractères min.)"};
   const askAdmin=async lbl=>{const c=prompt(lbl+"\nConfirmez avec votre code administrateur :");if(c==null)return false;
     const d=rd(),me=d&&d.users.find(x=>x.id===cur.id);
     if(!me||!(await chkHash(me.hash,c,me.salt))){msg("Code administrateur incorrect");return false}return true};
@@ -7044,13 +7090,13 @@ function openUsers(){
       const dd=rd();if(!dd)return;
       if(dd.users.some(x=>x.id!==editId&&x.nom.toLowerCase()===nom.toLowerCase()))return msg("Ce nom existe déjà");
       if(!editId){
-        if(!okCode(c))return msg("Code : 6 caractères minimum");
+        if(!okCode(c))return msg("Code : 8 caractères minimum");
         if(role==="admin"&&!(await askAdmin("Création d’un nouvel administrateur"))){return}
         const salt=rnd(16);dd.users.push({id:rnd(8),nom,role,agence,actif:true,salt,hash:await mkHash(c,salt),creeLe:Date.now(),creePar:cur.id});
         if(wr(dd)){logU("Utilisateur créé",nom+" · "+(role==="admin"?"admin":"agent"));resetForm();msg("Compte créé : "+nom+" · code : "+c+" (à communiquer à l'intéressé)",1);list()}
       }else{
         const u=dd.users.find(x=>x.id===editId);if(!u){resetForm();return msg("Utilisateur introuvable")}
-        if(c&&!okCode(c))return msg("Code : 6 caractères minimum");
+        if(c&&!okCode(c))return msg("Code : 8 caractères minimum");
         const rl=u.id===cur.id?u.role:role;
         if(u.role!=="admin"&&rl==="admin"&&!(await askAdmin("Promotion de cet utilisateur au rôle administrateur"))){return}
         if(u.role==="admin"&&rl!=="admin"&&u.actif&&nbAdm(dd)<2)return msg("Gardez au moins un administrateur actif");

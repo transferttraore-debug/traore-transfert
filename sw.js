@@ -1,4 +1,4 @@
-const CACHE='traore-transfer-v60-session-menu';
+const CACHE='traore-transfer-v67-securite';
 const CORE=['./','./index.html','./manifest.webmanifest','./icon.svg','./icon-180.png','./icon-192.png','./icon-512.png','./icon-512-maskable.png','./login-reference-bg.webp','./login-background.webp','./accueil-background.webp','./haba-fintech-bg.webp'];
 self.addEventListener('install',event=>{event.waitUntil((async()=>{const cache=await caches.open(CACHE);await Promise.all(CORE.map(path=>cache.add(path).catch(()=>null)));await self.skipWaiting()})())});
 self.addEventListener('activate',event=>{event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(key=>key.startsWith('traore-transfer-')&&key!==CACHE).map(key=>caches.delete(key)));await self.clients.claim()})())});
