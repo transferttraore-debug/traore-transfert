@@ -1,0 +1,29 @@
+TRAORÉ TRANSFERT INTERNATIONAL — V59 FIREBASE
+================================================
+
+Firebase Web configuration is embedded in index.html. It is public client configuration,
+not an administrator password. Never place service-account private keys in this application.
+
+WHAT V59 PREPARES
+- Firebase Web SDK 10.14.1 initialization.
+- Firebase Authentication email/password sign-in and sign-out helpers.
+- Firestore client and a restricted backup helper.
+- Local login and offline data remain the primary application path.
+- No automatic upload or migration of local business data is performed.
+
+REQUIRED CONSOLE STEPS
+1. In Firebase Authentication, enable Email/Password.
+2. Confirm the administrator account can sign in using its own password.
+3. In Firestore Database, publish firestore.rules.
+4. Create profiles/{AUTH_UID} for the administrator with:
+   { "role": "admin", "active": true, "email": "habatech2026@gmail.com" }
+   This profile must be created by a trusted administrator environment; client rules forbid
+   users from assigning themselves roles.
+5. Do not enable data sync until role/profile and rules are verified.
+
+IMPORTANT
+- The PIN shared in chat is not embedded in source code.
+- The app's existing local accounts are not automatically converted into Firebase users.
+- Full two-way synchronization, conflict resolution, and offline queue still require a
+  controlled migration phase and testing against real Firestore rules.
+- Keep an exported JSON backup before any future migration.
